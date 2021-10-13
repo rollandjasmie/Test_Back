@@ -1,12 +1,7 @@
 import express from 'express';
 import userRoutes from './routes/users';
 import refreshTokens from './routes/refreshTokens';
-import rateLimit from 'express-rate-limit';
 
-require('dotenv').config();
-/** PORT AND HOSTNAME */
-const hostname = process.env.SERVER_HOSTNAME;
-const port = process.env.SERVER_PORT;
 
 const app = express();
 
