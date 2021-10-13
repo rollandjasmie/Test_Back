@@ -21,7 +21,7 @@ const refreshTokenSecret: string = process.env.JWT_REFRESH_TOKEN_SECRET || 'encr
  */
 //
 const index = (req: Request, res: Response) => {
-    res.status(200);
+    res.status(200).json();
 };
 
 /**
@@ -345,6 +345,7 @@ const logout = async (req: Request, res: Response): Promise<any> => {
     res.cookie('jwt', '', { maxAge: 1 });
     res.status(200).json({ error: false, message: "L'utilisateur a été déconnecté succès" });
 };
+
 
 
 

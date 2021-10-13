@@ -7,6 +7,9 @@ import { emailAlreadyExists } from '../middleware/user/emailAlreadyExists';
 import { validatorDataMissingRegister, register } from '../middleware/validation/validatorDataMissingRegister';
 import { validatorDataMissingLogin, login } from '../middleware/validation/validatorDataMissingLogin';
 import { dataNotCompliant, checkMailAndpassword } from '../middleware/validation/dataNotCompliant';
+import { limitAccesLogin} from '../middleware/user/limitAccesLogin';
+
+
 
 const router = express.Router();
 
@@ -14,7 +17,7 @@ const router = express.Router();
 /**
  * @api {get} / index page
  * @apiName index page
- * @apiGroup Users
+ * @apiGroup User
  *
  * @apiSuccess (200)             send page index
  * @apiError  (404) send page index 404
@@ -54,7 +57,7 @@ router.get('/', controller.index);
   }
 }
  */
-router.post('/register', validatorDataMissingRegister(register), dataNotCompliant(checkMailAndpassword), emailAlreadyExists, controller.register);
+router.post('/register',validatorDataMissingRegister(register), dataNotCompliant(checkMailAndpassword), emailAlreadyExists, controller.register);
 
 
 /**
@@ -79,7 +82,7 @@ router.post('/register', validatorDataMissingRegister(register), dataNotComplian
  * }
 }
  */
-router.post('/login', validatorDataMissingLogin(login), controller.login);
+router.post('/login', limitAccesLogin, validatorDataMissingLogin(login), controller.login);
 
 
 /**
@@ -176,7 +179,7 @@ router.put('/changePassword/:id', verificationToken, validationChangePassword(ch
 router.get('/users', verificationToken, controller.getAllUser);
 
 /**
- * @api {delete} /user disconnection
+ * @api {delete}    /user disconnection
  * @apiName logout
  * @apiGroup User
  *
