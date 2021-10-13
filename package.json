@@ -42,10 +42,11 @@
     "express-rate-limit": "^5.4.1",
     "express-validator": "^6.12.2",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.3.0"
+    "mysql2": "^2.3.0",
+    "ts-node": "^10.3.0"
   },
   "engines": {
     "node": "15.8.0",
-    "npm":"7.18.1"
+    "npm": "7.18.1"
   }
 }
