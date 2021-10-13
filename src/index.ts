@@ -5,8 +5,8 @@ import rateLimit from 'express-rate-limit';
 
 require('dotenv').config();
 /** PORT AND HOSTNAME */
-const hostname = process.env.SERVER_HOSTNAME || 'localhost';
-const port = process.env.SERVER_PORT || 3000;
+const hostname = process.env.SERVER_HOSTNAME;
+const port = process.env.SERVER_PORT;
 
 const app = express();
 
@@ -54,6 +54,4 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(3000, () => {
-    console.log(`Server is running ${hostname}:${port}`);
-});
+app.listen(port);
