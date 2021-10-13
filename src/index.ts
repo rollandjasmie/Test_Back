@@ -54,4 +54,4 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(port);
+app.listen(process.env.PORT || 5000);

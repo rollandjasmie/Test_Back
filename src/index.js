@@ -8,7 +8,6 @@ var users_1 = __importDefault(require("./routes/users"));
 var refreshTokens_1 = __importDefault(require("./routes/refreshTokens"));
 require('dotenv').config();
 /** PORT AND HOSTNAME */
-var port = process.env.SERVER_PORT;
 var app = express_1.default();
 /** Parse the body of the request */
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -36,4 +35,4 @@ app.use(function (req, res, next) {
         message: error.message
     });
 });
-app.listen(port);
+app.listen(process.env.PORT || 5000)
