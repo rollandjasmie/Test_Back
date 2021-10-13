@@ -43,5 +43,8 @@
     "express-validator": "^6.12.2",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.0"
+  },
+  "engines": {
+    "node": "15.8.0"
   }
 }
