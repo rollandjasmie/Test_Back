@@ -27,7 +27,7 @@ router.get('/', controller.index);
 
 
 /**
- * @api {post} /auht/register Create user
+ * @api {post} /register Create user
  * @apiName Create user
  * @apiGroup Authenfication
  *
@@ -58,7 +58,7 @@ router.post('/register', validatorDataMissingRegister(register), dataNotComplian
 
 
 /**
- * @api {post} /auht/login Login
+ * @api {post} /login Login
  * @apiName Login
  * @apiGroup Authenfication
  *
@@ -176,7 +176,7 @@ router.put('/changePassword/:id', verificationToken, validationChangePassword(ch
 router.get('/users', verificationToken, controller.getAllUser);
 
 /**
- * @api {delete} /auht/user disconnection
+ * @api {delete} /user disconnection
  * @apiName logout
  * @apiGroup User
  *

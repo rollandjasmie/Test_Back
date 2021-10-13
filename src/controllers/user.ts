@@ -21,7 +21,7 @@ const refreshTokenSecret: string = process.env.JWT_REFRESH_TOKEN_SECRET || 'encr
  */
 //
 const index = (req: Request, res: Response) => {
-    res.status(200).send();
+    res.status(200);
 };
 
 /**

@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "post",
-    "url": "/auht/register",
+    "url": "/register",
     "title": "Create user",
     "name": "Create_user",
     "group": "Authenfication",
@@ -93,7 +93,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/auht/login",
+    "url": "/login",
     "title": "Login",
     "name": "Login",
     "group": "Authenfication",
@@ -362,7 +362,7 @@ define({ "api": [
   },
   {
     "type": "delete",
-    "url": "/auht/user",
+    "url": "/user",
     "title": "disconnection",
     "name": "logout",
     "group": "User",
