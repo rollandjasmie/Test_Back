@@ -274,7 +274,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success",
-          "content": "   HTTP/1.1 200 OK\n{\n \"error\": false,\n\"message\": \"L'utilisateur a été modifiée succès\"\n}",
+          "content": "   HTTP/1.1 200 OK\n{\n \"error\": false,\n \"users\": [\n       {\n       \"firstname\": \"rolland\",\n       \"lastname\": \"rakot\",\n       \"email\": \"resa@gmail.com\",\n       \"sexe\": \"male\"\n       },\n       {\n       \"firstname\": \"rolland\",\n       \"lastname\": \"rakot\",\n       \"email\": \"resaa@gmail.com\",\n       \"sexe\": \"male\"\n       },\n       {\n       \"firstname\": \"rolland\",\n       \"lastname\": \"rakot\",\n       \"email\": \"resasa@gmail.com\",\n       \"sexe\": \"male\"\n       },\n}",
           "type": "json"
         }
       ]
@@ -361,6 +361,47 @@ define({ "api": [
     "groupTitle": "User"
   },
   {
+    "type": "get",
+    "url": "/",
+    "title": "index page",
+    "name": "index_page",
+    "group": "User",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "optional": false,
+            "field": "send",
+            "description": "<p>page index</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "404": [
+          {
+            "group": "404",
+            "optional": false,
+            "field": "send",
+            "description": "<p>page index 404</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/users.ts",
+    "groupTitle": "User"
+  },
+  {
     "type": "delete",
     "url": "/user",
     "title": "disconnection",
@@ -402,47 +443,6 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "src/routes/users.ts",
     "groupTitle": "User"
-  },
-  {
-    "type": "get",
-    "url": "/",
-    "title": "index page",
-    "name": "index_page",
-    "group": "Users",
-    "success": {
-      "fields": {
-        "200": [
-          {
-            "group": "200",
-            "optional": false,
-            "field": "send",
-            "description": "<p>page index</p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "fields": {
-        "404": [
-          {
-            "group": "404",
-            "optional": false,
-            "field": "send",
-            "description": "<p>page index 404</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/routes/users.ts",
-    "groupTitle": "Users"
   },
   {
     "type": "put",

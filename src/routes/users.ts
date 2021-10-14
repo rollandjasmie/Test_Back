@@ -173,7 +173,25 @@ router.put('/changePassword/:id', verificationToken, validationChangePassword(ch
  *    HTTP/1.1 200 OK
  * {
  *  "error": false,
- * "message": "L'utilisateur a été modifiée succès"
+ *  "users": [
+ *        {
+ *        "firstname": "rolland",
+ *        "lastname": "rakot",
+ *        "email": "resa@gmail.com",
+ *        "sexe": "male"
+ *        },
+ *        {
+ *        "firstname": "rolland",
+ *        "lastname": "rakot",
+ *        "email": "resaa@gmail.com",
+ *        "sexe": "male"
+ *        },
+ *        {
+ *        "firstname": "rolland",
+ *        "lastname": "rakot",
+ *        "email": "resasa@gmail.com",
+ *        "sexe": "male"
+ *        },
  * }
  */
 router.get('/users', verificationToken, controller.getAllUser);
