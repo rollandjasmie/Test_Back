@@ -136,7 +136,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "https://testbacksayna.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"testbacksayna",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
